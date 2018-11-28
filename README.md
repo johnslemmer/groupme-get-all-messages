@@ -1,5 +1,7 @@
 # groupme-get-all-messages
 
+[![CircleCI](https://circleci.com/gh/johnslemmer/groupme-get-all-messages.svg?style=svg)](https://circleci.com/gh/johnslemmer/groupme-get-all-messages)
+
 Simply grab all of the messages from a specific GroupMe group and output it
 as JSON.
 
