@@ -21,7 +21,7 @@ npx groupme-get-all-messages
 
 This will step you through asking for your developer access token (which you
 can get by logging in here: https://dev.groupme.com/ ). And then it will prompt
-for which group grab all the messages from.
+for which group to grab all the messages from.
 
 If you already know your access token and the group ID you can quickly get access
 to all the messages via the following:
