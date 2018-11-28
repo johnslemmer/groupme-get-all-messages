@@ -1,8 +1,6 @@
 # TODO
 
-- add license
 - add programatic usage
-- add keywords for NPM
 - add -f option for outputing to a certain file
 - more unit testing
 - use better arg parse

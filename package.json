@@ -10,7 +10,7 @@
   "module": "build/module/index.js",
   "repository": "https://github.com/johnslemmer/groupme-get-all-messages",
   "license": "MIT",
-  "keywords": [],
+  "keywords": ["groupme", "group", "me", "messages"],
   "scripts": {
     "info": "npm-scripts-info",
     "build": "run-s clean && run-p build:*",
