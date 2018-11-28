@@ -1,13 +1,54 @@
 // tslint:disable:no-console
+import path from 'path';
 import got from 'got';
 import inquirer from 'inquirer';
+import readPkgUp from 'read-pkg-up';
 
 // tslint:disable-next-line:no-expression-statement typedef
 (async function main() {
+  if (handleHelp()) return;
+  if (handleVersion()) return;
   const accessToken = await getAccessToken();
   const groupId = await getGroupId(accessToken);
   console.log(JSON.stringify(await getAllMessages(groupId, accessToken)));
-})();
+})().catch(error => {
+  console.error(error);
+  process.exit(1);
+});
+
+/**
+ * Handles if help was asked for in CLI arguments
+ *
+ * @returns if help was handled, useful if you want to exit the process.
+ */
+function handleHelp(): boolean {
+  if (!['-h', '--help'].includes(process.argv[2])) {
+    return false;
+  }
+  printHelp();
+  return true;
+}
+
+function printHelp() {
+  console.log(
+    `Usage: ${path.basename(
+      process.argv[1],
+    )} [-h|--help] [-v|--version] [<GroupMe Access Token> [<Group ID>]]`,
+  );
+}
+
+/**
+ * Handles if version was asked for in CLI arguments
+ *
+ * @returns if version was handled, useful if you want to exit the process.
+ */
+function handleVersion(): boolean {
+  if (!['-v', '--version'].includes(process.argv[2])) {
+    return false;
+  }
+  console.log(readPkgUp.sync().pkg.version);
+  return true;
+}
 
 async function getAccessToken(): Promise<string> {
   return (
@@ -57,10 +98,6 @@ async function getGroups(accessToken: string): Promise<ReadonlyArray<Group>> {
     `https://api.groupme.com/v3/groups?token=${accessToken}&omit=memberships&per_page=100`,
     { json: true },
   );
-  if (response.body.response === null) {
-    console.error(response.body);
-    throw Error(`Error requesting data`);
-  }
   return response.body.response.map(({ id, name }: Group) => ({
     id,
     name,
@@ -114,10 +151,6 @@ async function getMessagesRaw(
     }${beforeId ? `&before_id=${beforeId}` : ''}`,
     { json: true },
   );
-  if (response.body.response === null) {
-    console.error(response.body);
-    throw Error(`Error requesting data`);
-  }
   return response.body.response;
 }
 
