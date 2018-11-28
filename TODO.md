@@ -1,7 +1,5 @@
 # TODO
 
-- move to index
-- cleanup type-starter stuff
 - use arg parse library
 - show better help
 - publish
