@@ -89,7 +89,7 @@ async function getAllMessages(
     );
     allMessages = allMessages.concat(messages);
   }
-  return filterValues(allMessages);
+  return filterValues(allMessages).reverse();
 }
 
 function filterValues(messages: Message[]): Message[] {
