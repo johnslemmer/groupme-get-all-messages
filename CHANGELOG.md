@@ -1,0 +1,18 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="1.0.0"></a>
+# 1.0.0 (2018-11-28)
+
+
+### Bug Fixes
+
+* sort printed json array in increasing time order ([edfe47b](https://github.com/johnslemmer/groupme-get-all-messages/commit/edfe47b))
+
+
+### Features
+
+* add better help ([464f99f](https://github.com/johnslemmer/groupme-get-all-messages/commit/464f99f))
+* add simple get of groups and log ([a400e94](https://github.com/johnslemmer/groupme-get-all-messages/commit/a400e94))
+* minimum viable product ([3a792f4](https://github.com/johnslemmer/groupme-get-all-messages/commit/3a792f4))
