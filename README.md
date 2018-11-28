@@ -51,3 +51,15 @@ These results in something like the following:
   ...
 ]
 ```
+
+## Programmatic Usage
+
+The full documentation can be found at https://johnslemmer.github.io/groupme-get-all-messages/
+
+Here is an example:
+
+```javascript
+const accessToken = '1234567890123456789012345678901234567890';
+const groups = await getGroups(accessToken);
+console.log(JSON.stringify(await getAllMessages(groups[0].id, accessToken)));
+```
