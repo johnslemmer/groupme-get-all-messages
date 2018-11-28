@@ -1,6 +1,6 @@
 {
   "name": "groupme-get-all-messages",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Simply grab all of the messages from a specific GroupMe group",
   "bin": {
     "groupme-get-all-messages": "./bin/groupme-get-all-messages"
@@ -10,7 +10,12 @@
   "module": "build/module/index.js",
   "repository": "https://github.com/johnslemmer/groupme-get-all-messages",
   "license": "MIT",
-  "keywords": ["groupme", "group", "me", "messages"],
+  "keywords": [
+    "groupme",
+    "group",
+    "me",
+    "messages"
+  ],
   "scripts": {
     "info": "npm-scripts-info",
     "build": "run-s clean && run-p build:*",
