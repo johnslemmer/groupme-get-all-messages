@@ -1,6 +1,6 @@
 {
   "name": "groupme-get-all-messages",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simply grab all of the messages from a specific GroupMe group",
   "bin": {
     "groupme-get-all-messages": "./bin/groupme-get-all-messages"
