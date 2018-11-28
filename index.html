@@ -79,7 +79,7 @@
 				<pre><code class="language-bash">npx groupme-get-all-messages</code></pre>
 				<p>This will step you through asking for your developer access token (which you
 					can get by logging in here: <a href="https://dev.groupme.com/">https://dev.groupme.com/</a> ). And then it will prompt
-				for which group grab all the messages from.</p>
+				for which group to grab all the messages from.</p>
 				<p>If you already know your access token and the group ID you can quickly get access
 				to all the messages via the following:</p>
 				<pre><code class="language-bash">npx groupme-get-all-messages &lt;access-token&gt; &lt;group-id&gt;</code></pre>
@@ -101,6 +101,12 @@
   },
   ...
 ]</code></pre>
+				<h2 id="programmatic-usage">Programmatic Usage</h2>
+				<p>The full documentation can be found at <a href="https://johnslemmer.github.io/groupme-get-all-messages/">https://johnslemmer.github.io/groupme-get-all-messages/</a></p>
+				<p>Here is an example:</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> accessToken = <span class="hljs-string">'1234567890123456789012345678901234567890'</span>;
+<span class="hljs-keyword">const</span> groups = <span class="hljs-keyword">await</span> getGroups(accessToken);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-keyword">await</span> getAllMessages(groups[<span class="hljs-number">0</span>].id, accessToken)));</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -113,11 +119,14 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-is-not-exported">
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/group.html" class="tsd-kind-icon">Group</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-is-not-exported">
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/message.html" class="tsd-kind-icon">Message</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#help" class="tsd-kind-icon">HELP</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#filtervalues" class="tsd-kind-icon">filter<wbr>Values</a>
@@ -125,13 +134,13 @@
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#getaccesstoken" class="tsd-kind-icon">get<wbr>Access<wbr>Token</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
+					<li class=" tsd-kind-function">
 						<a href="globals.html#getallmessages" class="tsd-kind-icon">get<wbr>All<wbr>Messages</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#getgroupid" class="tsd-kind-icon">get<wbr>Group<wbr>Id</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
+					<li class=" tsd-kind-function">
 						<a href="globals.html#getgroups" class="tsd-kind-icon">get<wbr>Groups</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
@@ -148,9 +157,6 @@
 					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#inquiregroup" class="tsd-kind-icon">inquire<wbr>Group</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#printhelp" class="tsd-kind-icon">print<wbr>Help</a>
 					</li>
 				</ul>
 			</nav>
