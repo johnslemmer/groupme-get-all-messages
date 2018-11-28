@@ -1,6 +1,7 @@
 # TODO
 
 - publish
+- add -f option for outputing to a certain file
 - more unit testing
 - use better arg parse
 - better validation on inputs (eg. auth key in argv)
