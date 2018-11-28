@@ -1,7 +1,7 @@
 // tslint:disable:no-console
-import path from 'path';
 import got from 'got';
 import inquirer from 'inquirer';
+import path from 'path';
 import readPkgUp from 'read-pkg-up';
 
 // tslint:disable-next-line:no-expression-statement typedef
@@ -25,10 +25,12 @@ function handleHelp(): boolean {
   if (!['-h', '--help'].includes(process.argv[2])) {
     return false;
   }
+  // tslint:disable-next-line:no-expression-statement
   printHelp();
   return true;
 }
 
+// tslint:disable-next-line:typedef
 function printHelp() {
   console.log(
     `Usage: ${path.basename(
@@ -124,14 +126,17 @@ async function getAllMessages(
       100,
       allMessages[allMessages.length - 1].id,
     );
+    // tslint:disable-next-line:no-expression-statement
     allMessages = allMessages.concat(messages);
   }
   return filterValues(allMessages).reverse();
 }
 
-function filterValues(messages: Message[]): Message[] {
+// tslint:disable-next-line:readonly-array
+function filterValues(messages: ReadonlyArray<Message>): Message[] {
   return messages.map(({ id, name, user_id, text, created_at }: Message) => ({
     id,
+    // tslint:disable-next-line:object-literal-sort-keys
     created_at,
     user_id,
     name,
@@ -144,7 +149,10 @@ async function getMessagesRaw(
   accessToken: string,
   limit?: number,
   beforeId?: string,
-): Promise<{ count: number; messages: Message[] }> {
+): Promise<{
+  readonly count: number;
+  readonly messages: ReadonlyArray<Message>;
+}> {
   const response = await got(
     `https://api.groupme.com/v3/groups/${groupId}/messages?token=${accessToken}${
       limit ? `&limit=${limit}` : ''
