@@ -1,6 +1,8 @@
 # groupme-get-all-messages
 
-[![CircleCI](https://circleci.com/gh/johnslemmer/groupme-get-all-messages.svg?style=svg)](https://circleci.com/gh/johnslemmer/groupme-get-all-messages)
+[![NPM version](https://img.shields.io/npm/v/groupme-get-all-messages.svg)](https://www.npmjs.com/package/groupme-get-all-messages)
+[![Codecov](https://img.shields.io/codecov/c/github/johnslemmer/groupme-get-all-messages.svg)](https://codecov.io/gh/johnslemmer/groupme-get-all-messages)
+[![CircleCI](https://img.shields.io/circleci/project/github/johnslemmer/groupme-get-all-messages.svg)](https://circleci.com/gh/johnslemmer/groupme-get-all-messages)
 
 Simply grab all of the messages from a specific GroupMe group and output it
 as JSON.
