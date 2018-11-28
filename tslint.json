@@ -27,7 +27,7 @@
     "no-expression-statement": [
       true,
       { "ignore-prefix": ["console.", "process.exit"] }
-    ],
+    ]
     /* end tslint-immutable rules */
   }
 }
